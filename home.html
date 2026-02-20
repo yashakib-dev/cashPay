@@ -74,9 +74,9 @@
             </a>
             <a onclick="showOnly('pay-bill')" class="btn flex-col h-full py-4 rounded-2xl">
                 <img src="./assets/opt-5.png" alt="">
-                <p>Pat Bill</p>
+                <p>Pay Bill</p>
             </a>
-            <a onclick="showOnly('transection')" class="btn flex-col h-full py-4 rounded-2xl">
+            <a id="history-btn" onclick="showOnly('history')" class="btn flex-col h-full py-4 rounded-2xl">
                 <img src="./assets/opt-6.png" alt="">
                 <p>Transactions</p>
             </a>
@@ -234,20 +234,14 @@
 
         </section>
 
-        <section id="transection" class="pb-8 hidden">
-            <div class="flex justify-between w-11/12 mx-auto pb-6">
+        <section id="history" class="pb-8 hidden space-y-4">
+            <div class="flex justify-between w-11/12 mx-auto pb-6 ">
                  <h2 class="text-2xl font-bold pt-8">Transaction History</h2>
                  <button class="pt-8">View All</button>
 
             </div>
            
-            <div class="flex gap-4 w-11/12 mx-auto pt-4  rounded-xl p-4 shadow bg-base-100">
-                <img src="./assets/wallet 1.png" class="" alt="">
-                <div class="">
-                    <h2 class="font-semibold text-[#080808b0]">Electricity Bill</h2>
-                    <p class="text-[12px]">Today 01:44 AM</p>
-                </div>
-            </div>
+        
 
         </section>
 
@@ -256,6 +250,7 @@
     <script src="./script/machine.js"></script>
     <script src="./script/addMoney.js"></script>
     <script src="./script/cashout.js"></script>
+    <script src="./script/history.js"></script>
 
 </body>
 

@@ -21,7 +21,7 @@ document.getElementById("cashout").classList.add("hidden");
 document.getElementById("transfer").classList.add("hidden");
 document.getElementById("bonus").classList.add("hidden");
 document.getElementById("pay-bill").classList.add("hidden");
-document.getElementById("transection").classList.add("hidden");
+document.getElementById("history").classList.add("hidden");
 
 document.getElementById(id).classList.remove("hidden");
 }
