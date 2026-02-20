@@ -1,43 +1,35 @@
-document.getElementById("cashout-btn")
-        .addEventListener("click", function(){
+document.getElementById("cashout-btn").addEventListener("click", function () {
+  // get cashout number and validation
+  const cashoutNumber = getValueFromInput("cashout-number");
 
-            const cashoutNumberInput = document.getElementById("cashout-number");
-            const cashoutNumber = cashoutNumberInput.value;
-            console.log(cashoutNumber);
-            if(cashoutNumber.length != 11)
-            {
-                alert("Invalid Number!!");
-                return;
-            }
-            
+  if (cashoutNumber.length != 11) {
+    alert("Invalid Number!!");
+    return;
+  }
 
+  // get cashout amount
+  const cashoutAmount = getValueFromInput("cashout-amount");
+  const balanceAmount = getBalance();
 
-            const cashoutAmountInput = document.getElementById("cashout-amount");
-            const cashoutAmount = cashoutAmountInput.value;
-            console.log(cashoutAmount);
+  const newBalance = balanceAmount - Number(cashoutAmount); //calculate new balance
 
-            const initalBalance = document.getElementById("balance");
-            const balanceAmount = initalBalance.innerText;
-                console.log(balanceAmount);
-            const newBalance = Number(balanceAmount) - Number(cashoutAmount);
-               
-            if(newBalance < 0){
-                alert("Invalid Amount.");
-                return;
-            }
+  if (newBalance < 0) {
+    alert("Invalid Amount.");
+    return;
+  }
 
-            const cashoutPinInput = document.getElementById("cashout-pin");
-            const cashoutPin = cashoutPinInput.value;
-            console.log(cashoutPin);
+  const cashoutPin = getValueFromInput("cashout-pin"); //get pin
 
-            if(cashoutPin === "0987"){
-                alert("Withdraw Successful.");
+  if (cashoutPin === "0987") {
+    alert("Withdraw Successful.");
 
-                initalBalance.innerText = newBalance;
-                 console.log(newBalance);
-            }
-            else{
-                alert("Invalid pin or Agent Number.");
-                return;
-            }
-        })
+    document.getElementById("balance").innerText = newBalance; //set the remaining balance to newBalance
+  } else {
+    alert("Invalid pin or Agent Number.");
+    return;
+  }
+});
+
+document.getElementById("logout").addEventListener("click", function () {
+  window.location.assign("index.html");
+});
