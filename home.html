@@ -27,13 +27,14 @@
         }
     </style>
 </head>
-<body class="min-h-screen max-w-md bg-base-200 mx-auto" >
 
-     <header class="border-b-2 border-gray-300">
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+
+    <header class="border-b-2 border-gray-300">
         <section class="py-3 w-11/12 mx-auto flex justify-between items-center">
             <div class="left flex gap-2">
                 <div class="w-16">
-                         <img src="./assets/logo.png" alt="">
+                    <img src="./assets/logo.png" alt="">
                 </div>
                 <div>
                     <h2 class="text-2xl font-bold"><span id="balance">$45000</span></h2>
@@ -41,7 +42,7 @@
                 </div>
             </div>
             <div class="right">
-                <button class="btn text-[16px]"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+                <button id="logout" class="btn text-[16px]"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
             </div>
         </section>
     </header>
@@ -49,7 +50,8 @@
     <main>
         <section class="w-11/12 mx-auto space-y-2 pt-6">
             <h2 class="font-bold text-[24px]">Welcome to Pay<span class="text-primary">oo</span></h2>
-            <p class="text-[#08080876]">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+            <p class="text-[#08080876]">Enjoy easy and convenient financial services with us. Cashout charge is low and
+            </p>
         </section>
 
         <section class="buttons grid grid-cols-3 gap-3 w-11/12 mx-auto space-y-2 pt-6">
@@ -77,10 +79,38 @@
                 <img src="./assets/opt-6.png" alt="">
                 <p>Transactions</p>
             </a>
-           
+
+        </section>
+
+        <section id="cashout" class="w-11/12 mx-auto">
+
+            <h2 class="text-2xl font-bold pt-8">Cashout</h2>
+            <div class="form pt-8 ">
+                <fieldset class="fieldset bg-base-100 w-full shrink-0 p-8 mx-auto rounded-3xl">
+
+                    <label class="label font-medium text-[16px] text-[#080808]">Agent Number</label>
+                    <input id="mobile-number" value="01823456789" type="number"
+                        class="input text-[16px] p-6 rounded-full bg-base-200 border-none"
+                        placeholder="Enter 11 digit number" />
+
+                    <label class="label font-medium text-[16px] text-[#080808]">Amount</label>
+                    <input id="pin-number" type="number"
+                        class="input text-[16px] p-6 rounded-full bg-base-200 border-none"
+                        placeholder="Enter amount to withdraw" />
+
+                    <label class="label font-medium text-[16px] text-[#080808]">Pin Number</label>
+                    <input id="pin-number" type="password"
+                        class="input text-[16px] p-6 rounded-full bg-base-200 border-none"
+                        placeholder="Enter 4 digit pin number" />
+
+                    <button id="login-button" onclick=""
+                        class="btn btn-neutral hover:bg-[#3a25c1df] text-[16px] mt-4 rounded-full bg-primary p-6">Withdraw Money</button>
+                </fieldset>
+            </div>
         </section>
     </main>
 
-     <script src="./script/script.js"></script>
+    <script src="./script/script.js"></script>
 </body>
+
 </html>
