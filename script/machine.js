@@ -13,5 +13,16 @@ function getBalance(){
      console.log("Balance",Number(balance));
      return Number(balance);
 }
-    
+
+// Show only a section at a time
+function showOnly(id){
+document.getElementById("addmoney").classList.add("hidden");
+document.getElementById("cashout").classList.add("hidden");
+document.getElementById("transfer").classList.add("hidden");
+document.getElementById("bonus").classList.add("hidden");
+document.getElementById("pay-bill").classList.add("hidden");
+document.getElementById("transection").classList.add("hidden");
+
+document.getElementById(id).classList.remove("hidden");
+}
    

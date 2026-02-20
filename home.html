@@ -49,41 +49,41 @@
     </header>
 
     <main>
-        <section class="w-11/12 mx-auto space-y-2 pt-6">
+        <section class="w-11/12 mx-auto space-y-2 pt-6 hi">
             <h2 class="font-bold text-[24px]">Welcome to Pay<span class="text-primary">oo</span></h2>
             <p class="text-[#08080876]">Enjoy easy and convenient financial services with us. Cashout charge is low and
             </p>
         </section>
 
-        <section class="buttons grid grid-cols-3 gap-3 w-11/12 mx-auto space-y-2 pt-6">
-            <a class="btn flex-col h-full py-4 rounded-2xl">
+        <section  class="buttons grid grid-cols-3 gap-3 w-11/12 mx-auto space-y-2 pt-6">
+            <a onclick="showOnly('addmoney')" class="btn flex-col h-full py-4 rounded-2xl">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Add Money</p>
             </a>
-            <a class="btn flex-col h-full py-4 rounded-2xl">
+            <a onclick="showOnly('cashout')" class="btn flex-col h-full py-4 rounded-2xl">
                 <img src="./assets/opt-2.png" alt="">
                 <p>Cashout</p>
             </a>
-            <a class="btn flex-col h-full py-4  rounded-2xl">
+            <a onclick="showOnly('transfer')" class="btn flex-col h-full py-4  rounded-2xl">
                 <img src="./assets/opt-3.png" alt="">
                 <p>TransferMoney</p>
             </a>
-            <a class="btn flex-col h-full py-4 rounded-2xl">
+            <a onclick="showOnly('bonus')" class="btn flex-col h-full py-4 rounded-2xl">
                 <img src="./assets/opt-4.png" alt="">
                 <p>Get Bonus</p>
             </a>
-            <a class="btn flex-col h-full py-4 rounded-2xl">
+            <a onclick="showOnly('pay-bill')" class="btn flex-col h-full py-4 rounded-2xl">
                 <img src="./assets/opt-5.png" alt="">
                 <p>Pat Bill</p>
             </a>
-            <a class="btn flex-col h-full py-4 rounded-2xl">
+            <a onclick="showOnly('transection')" class="btn flex-col h-full py-4 rounded-2xl">
                 <img src="./assets/opt-6.png" alt="">
                 <p>Transactions</p>
             </a>
 
         </section>
 
-        <section id="addmoney" class="w-11/12 mx-auto  ">
+        <section id="addmoney" class="w-11/12 mx-auto hidden ">
 
             <h2 class="text-2xl font-bold pt-8">Add Money</h2>
             <div class="form pt-8 ">
@@ -93,9 +93,9 @@
                     <label class="label font-medium text-[16px] text-[#080808]">Select A Bank</label>
                     <select id="add-money-bank" class="select bg-base-200  rounded-full border-none">
                         <option disabled selected>Select a Bank</option>
-                        <option value="">IFIC Bank</option>
-                        <option value="">Jamuna Bank</option>
-                        <option value="">Islami Bank</option>
+                        <option value="IFIC Bank">IFIC Bank</option>
+                        <option value="Jamuna Bank">Jamuna Bank</option>
+                        <option value="Islami Bank">Islami Bank</option>
                     </select>
 
                     <label class="label font-medium text-[16px] text-[#080808]">Bank Account Number</label>
@@ -121,7 +121,7 @@
 
         </section>
 
-        <section id="cashout" class="w-11/12 mx-auto pb-12">
+        <section id="cashout" class="w-11/12 mx-auto hidden">
 
             <h2 class="text-2xl font-bold pt-8">Cashout</h2>
             <div class="form pt-8 ">
@@ -149,13 +149,114 @@
             </div>
         </section>
 
+        <section id="transfer" class="w-11/12 mx-auto pb-12 hidden">
+            <h2 class="text-2xl font-bold pt-8">Transfer Money</h2>
+            <div class="form pt-8 ">
+                <fieldset class="fieldset bg-base-100 w-full space-y-2 shrink-0 p-8 mx-auto rounded-3xl">
+
+                    <label class="label font-medium text-[16px] text-[#080808]">User Account Number
+                    </label>
+                    <input id="transfer-number" value="01823456789" type="number"
+                        class="input text-[16px] p-6 rounded-full bg-base-200 border-none"
+                        placeholder="Enter 11 digit number" />
+
+                    <label class="label font-medium text-[16px] text-[#080808]">Amount</label>
+                    <input id="transfer-amount" type="number"
+                        class="input text-[16px] p-6 rounded-full bg-base-200 border-none"
+                        placeholder="Enter amount to transfer" />
+
+                    <label class="label font-medium text-[16px] text-[#080808]">Pin Number</label>
+                    <input id="transfer-pin" type="password"
+                        class="input text-[16px] p-6 rounded-full bg-base-200 border-none"
+                        placeholder="Enter 4 digit pin number" />
+
+                    <button id="transfer-btn" onclick=""
+                        class="btn btn-neutral hover:bg-[#3a25c1df] text-[16px] mt-4 rounded-full bg-primary p-6">Send Now</button>
+                </fieldset>
+            </div>
+
+        </section>
+
+        <section id="bonus" class="w-11/12 mx-auto hidden">
+            <h2 class="text-2xl font-bold pt-8">Transfer Money</h2>
+            <div class="form pt-8 ">
+                <fieldset class="fieldset bg-base-100 w-full space-y-2 shrink-0 p-8 mx-auto rounded-3xl">
+
+                    <label class="label font-medium text-[16px] text-[#080808]">Enter Bonus Coupon
+                    </label>
+                    <input id="coupon-number" value="01823456789" type="number"
+                        class="input text-[16px] p-6 rounded-full bg-base-200 border-none"
+                        placeholder="Enter your coupon" />
+
+                    <button id="bonus-btn" onclick=""
+                        class="btn btn-neutral hover:bg-[#3a25c1df] text-[16px] mt-4 rounded-full bg-primary p-6">Get Bonus</button>
+                </fieldset>
+            </div>
+
+        </section>
+
+         <section id="pay-bill" class="w-11/12 mx-auto hidden ">
+
+            <h2 class="text-2xl font-bold pt-8">Add Money</h2>
+            <div class="form pt-8 ">
+                <fieldset class="fieldset bg-base-100 w-full space-y-2 shrink-0 p-8 mx-auto rounded-3xl">
+
+
+                    <label class="label font-medium text-[16px] text-[#080808]">Select A Bank</label>
+                    <select id="institite" class="select bg-base-200  rounded-full border-none">
+                        <option disabled selected>Select an Institute</option>
+                        <option value="Link 3">Link 3</option>
+                        <option value="Jalalabad Gas">Jalalabad Gas</option>
+                        <option value="Electricity Bill">Electricity Bill</option>
+                        <option value="Mobile Recharge">Mobile Recharge</option>
+                        <option value="Bank Deposit">Bank Deposit</option>
+                    </select>
+
+                    <label class="label font-medium text-[16px] text-[#080808]">Biller Account Number</label>
+                    <input id="biller-acc-number" value="01823456789" type="number"
+                        class="input text-[16px] p-6 rounded-full bg-base-200 border-none"
+                        placeholder="Enter account number" />
+
+                    <label class="label font-medium text-[16px] text-[#080808]">Amount to Pay</label>
+                    <input id="bill-amount" type="number"
+                        class="input text-[16px] p-6 rounded-full bg-base-200 border-none"
+                        placeholder="Add Amount to pay" />
+
+                    <label class="label font-medium text-[16px] text-[#080808]">Pin Number</label>
+                    <input id="bill-pin" type="password"
+                        class="input text-[16px] p-6 rounded-full bg-base-200 border-none"
+                        placeholder="Enter 4 digit pin number" />
+
+                    <button id="bill-btn" onclick=""
+                        class="btn btn-neutral hover:bg-[#3a25c1df] text-[16px] mt-4 rounded-full bg-primary p-6">Pay Now</button>
+                </fieldset>
+            </div>
+
+        </section>
+
+        <section id="transection" class="pb-8 hidden">
+            <div class="flex justify-between w-11/12 mx-auto pb-6">
+                 <h2 class="text-2xl font-bold pt-8">Transaction History</h2>
+                 <button class="pt-8">View All</button>
+
+            </div>
+           
+            <div class="flex gap-4 w-11/12 mx-auto pt-4  rounded-xl p-4 shadow bg-base-100">
+                <img src="./assets/wallet 1.png" class="" alt="">
+                <div class="">
+                    <h2 class="font-semibold text-[#080808b0]">Electricity Bill</h2>
+                    <p class="text-[12px]">Today 01:44 AM</p>
+                </div>
+            </div>
+
+        </section>
 
 
     </main>
     <script src="./script/machine.js"></script>
     <script src="./script/addMoney.js"></script>
     <script src="./script/cashout.js"></script>
-    
+
 </body>
 
 </html>
